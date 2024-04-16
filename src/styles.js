@@ -9,9 +9,11 @@ export const Container = styled.div `
 export const H1 = styled.h1 `
   color: black;
   font-size: 40px;
-  bor
+  border-color: ;
 `;
 
 export const P = styled.p `
   color: purple;
+  color: aliceblue;
+  border: 20px;
 `;
