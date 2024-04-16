@@ -1,12 +1,14 @@
 import React from 'react'
 
+import { Container, H1 } from './styles'
+
 function App() {
   const hello = 'hello React'
 
   return (
-    <div>
-    <h1>{hello}</h1>
-    </div>
+    <Container>
+    <H1>{hello}</H1>
+    </Container>
   ) }
 
 
