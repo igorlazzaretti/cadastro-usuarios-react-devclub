@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import { Container, H1 } from './styles'
+import { Container, H1 } from "./styles";
 
 function App() {
-  const hello = 'hello React'
+  const hello = "hello React";
 
   return (
     <Container>
-    <H1>{hello}</H1>
+      <H1> {hello} </H1>{" "}
     </Container>
-  ) }
-
+  );
+}
 
 // const app = () => {
 
@@ -22,4 +22,4 @@ function App() {
 // )
 // }
 
-export default App
+export default App;
