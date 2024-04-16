@@ -1,15 +1,23 @@
 import React from 'react'
 
-import { Container, H1 } from './styles.js';
+function App() {
+  const hello = 'hello React'
 
-const app = () => {
+  return (
+    <div>
+    <h1>{hello}</h1>
+    </div>
+  ) }
 
-  const hello = "hello world"
 
-return (<Container>
-  <H1>{hello}</H1>
-  </Container>
-)
-}
+// const app = () => {
 
-export default app
+//   const hello = "hello world"
+
+// return (<Container>
+//   <H1>{hello}</H1>
+//   </Container>
+// )
+// }
+
+export default App

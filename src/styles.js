@@ -1,13 +1,11 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 export const Container = styled.div `
 
-background-color: red;
+ background-color: red;
+ color: green;
+ border-radius: 3px;
+ 
 
 
-`
-export const H1 = styled.h1`
-
-color: blue;
-font-size: 020px;
 `
