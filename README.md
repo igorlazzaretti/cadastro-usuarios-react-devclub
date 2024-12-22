@@ -14,7 +14,7 @@
 
 Curso do DevClub Full Stack onde tive meu primeiro contato com React. Usamos a ferramenta Vite para iniciar o projeto. Eslint para configurar o código e Axios para conectar com o backend.
 
-Aqui esta meu caderno de anotações: [Caderno](https://igorlzzrtt.notion.site/Node-js-16157f4b771580f581e7d72f4e560650)
+Aqui esta meu caderno de anotações: [Caderno](https://igorlzzrtt.notion.site/React-16357f4b771580e38153d3b79bbb8941?pvs=73)
 
 
 ## Sobre o Professor
