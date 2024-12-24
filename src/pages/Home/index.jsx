@@ -1,29 +1,40 @@
 // useRef para pegar o valor do input
 import { useRef } from 'react'
 
-import { Title, Container, TopBackground, Form,
-  ContainerInputs, Input, InputLabel, Button } from './styles'
+import { Title, Container, Form,
+  ContainerInputs, Input, InputLabel } from './styles'
+import Button from '../../components/Button'
+import TopBackground from '../../components/TopBackground'
+// Importando a api axios
+import api from '../../services/api'
 
 // Importando a Imagem
-import UsersImage from '../../assets/users.png'
+import { useNavigate } from 'react-router-dom'
+
 const title = "Usuários Cadastrados"
 
 function Home() {
+  // Navegação
+  const navigate = useNavigate()
   // Criando uma referência para pegar o valor do input
   const inputName = useRef()
   const inputAge = useRef()
   const inputEmail = useRef()
   // Função que captura o evento de submit do formulário
-  function registerNewUser(){
-    //TODO: Implementar a lógica de cadastro de usuário
-    console.log(inputName.current.value)
+  async function registerNewUser(){
+    // Vamos acessar um serviço externo porisso await
+    // Primeiramente usaremos o post
+    await api.post('/usuarios',{
+      name: inputName.current.value,         // String
+      age: parseInt(inputAge.current.value), // Int
+      email: inputEmail.current.value        // String
+    })
+
   }
 
   return (
     <Container>
-      <TopBackground>
-        <img src={UsersImage} alt="Imagem de Usuários" />
-      </TopBackground>
+      <TopBackground />
 
       <Form>
         <Title>{title}</Title>
@@ -44,8 +55,11 @@ function Home() {
           </div>
           </ContainerInputs>
 
-          <Button type='button' onClick={registerNewUser}>Cadastrar Usuário</Button>
+          <Button type='button' onClick={registerNewUser} theme='main'>
+            Cadastrar Usuário</Button>
       </ Form>
+      <Button type="button" onClick={() => navigate('/lista-de-usuarios')}>
+        Consultar Usuários</Button>
     </ Container>
   )
 }
