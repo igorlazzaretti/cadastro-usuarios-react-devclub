@@ -15,6 +15,11 @@ import { Container, ContainerUsers, TrashIcon, CardUsers,
 // Imagem do ícone de lixeira
 import Trash from "../../assets/trash.svg"
 
+// Toastify para mensagens
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 /**
  *  Função responsável por listar os usuários cadastrados
  */
@@ -39,13 +44,20 @@ function ListUsers() {
     }, [])
     // Função para deletar usuários
     async function deleteUsers(id) {
+        try {
         // Requisição DELETE para deletar o usuário
         await api.delete(`/usuarios/${id}`)
         // Atualiza a lista de usuários com Filter que não contém o id deletado
         const updateUsers = users.filter(user => user.id !== id)
         // Atualiza o estado de usuários
         setUsers(updateUsers)
+        // Mensagem de sucesso
+        toast.success('Usuário deletado com sucesso!');
+        } catch (error) {
+            // Mensagem de erro
+            toast.error('Erro ao deletar usuário.');
     }
+}
 
     // Retorno do componente
     return (
@@ -76,6 +88,7 @@ function ListUsers() {
                 ))}
             </ContainerUsers>
             <Button type="button" onClick={() => navigate('/')}>Voltar</Button>
+            <ToastContainer />
         </Container>
     )
 }

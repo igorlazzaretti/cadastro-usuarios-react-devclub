@@ -11,6 +11,10 @@ import api from '../../services/api'
 // Importando a Imagem
 import { useNavigate } from 'react-router-dom'
 
+// Toastify para mensagens
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const title = "Usuários Cadastrados"
 
 function Home() {
@@ -22,14 +26,16 @@ function Home() {
   const inputEmail = useRef()
   // Função que captura o evento de submit do formulário
   async function registerNewUser(){
-    // Vamos acessar um serviço externo porisso await
-    // Primeiramente usaremos o post
-    await api.post('/usuarios',{
-      name: inputName.current.value,         // String
-      age: parseInt(inputAge.current.value), // Int
-      email: inputEmail.current.value        // String
-    })
-
+    try {
+      await api.post('/usuarios', {
+        name: inputName.current.value,         // String
+        age: parseInt(inputAge.current.value), // Int
+        email: inputEmail.current.value        // String
+      });
+      toast.success('Usuário cadastrado com sucesso!');
+    } catch (error) {
+      toast.error('Erro ao cadastrar usuário.');
+    }
   }
 
   return (
@@ -60,6 +66,7 @@ function Home() {
       </ Form>
       <Button type="button" onClick={() => navigate('/lista-de-usuarios')}>
         Consultar Usuários</Button>
+      <ToastContainer />
     </ Container>
   )
 }

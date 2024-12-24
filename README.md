@@ -2,9 +2,7 @@
 
 <div align="center">
 <br>
-<video width="320" height="240" controls>
-  <source src="./src/readme/readme-banner.mp4" type="video/mp4">
-</video>
+<img src="./src/readme/readme.png">
 </div> <br>
 <div align="center">
 
@@ -12,9 +10,11 @@
 
 ## Sobre o Curso
 
-Curso do DevClub Full Stack onde tive meu primeiro contato com React. Usamos a ferramenta Vite para iniciar o projeto. Eslint para configurar o código e Axios para conectar com o backend.
+Curso do DevClub Full Stack onde tive meu primeiro contato com React. Usamos a ferramenta Vite para iniciar o projeto. Eslint para configurar o código e Axios para conectar com o backend. Reac Router DOM pras rotas e Toastify pras mensagens de sucesso e erro.
 
 Aqui esta meu caderno de anotações: [Caderno](https://igorlzzrtt.notion.site/React-16357f4b771580e38153d3b79bbb8941?pvs=73)
+
+Backend do projeto: [GitHub](https://github.com/igorlazzaretti/Node.js-Cadastro-Usuarios-DevClub)
 
 
 ## Sobre o Professor
